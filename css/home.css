@@ -1,0 +1,325 @@
+/* ============================================================
+   home.css - 瑞格米首页样式
+   ============================================================ */
+
+/* ===== 问候横幅 ===== */
+.greeting-banner {
+    background: var(--ba-card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--ba-card-border);
+    border-radius: var(--ba-radius-lg);
+    padding: 12px 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: var(--ba-card-shadow);
+    transition: all 0.3s;
+}
+.greeting-banner:hover {
+    box-shadow: var(--ba-card-shadow-hover);
+}
+.greeting-banner .greeting-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+}
+.greeting-banner .greeting-text {
+    flex: 1;
+}
+.greeting-banner .greeting-text .time-greeting {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ba-accent);
+}
+.greeting-banner .greeting-text .sub-greeting {
+    font-size: 13px;
+    color: var(--ba-text-muted);
+}
+
+/* ===== 发帖区域 ===== */
+.composer-card {
+    background: var(--ba-card-bg);
+    border-radius: var(--ba-radius-lg);
+    padding: 16px 20px 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--ba-card-border);
+    box-shadow: var(--ba-card-shadow);
+    transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.composer-card:hover {
+    box-shadow: var(--ba-card-shadow-hover);
+    border-color: rgba(122,92,45,0.2);
+}
+.composer-card .composer-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.composer-card .composer-header .post-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #e0e0e0;
+    border: 2px solid rgba(122,92,45,0.2);
+    transition: border-color 0.2s;
+    flex-shrink: 0;
+}
+.composer-card .composer-header .composer-label {
+    font-weight: 500;
+    color: var(--ba-text-secondary);
+    font-size: 14px;
+}
+.composer-card textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 12px 16px;
+    border: 2px solid rgba(150,170,190,0.2);
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: inherit;
+    line-height: 1.6;
+    background: rgba(255,255,255,0.3);
+    color: var(--ba-text);
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+.composer-card textarea:focus {
+    border-color: var(--ba-accent);
+    box-shadow: 0 0 0 3px rgba(122,92,45,0.08);
+}
+.composer-card textarea::placeholder {
+    color: var(--ba-text-light);
+}
+.composer-card .image-preview-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+.composer-card .image-preview-area .preview-item {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(150,170,190,0.2);
+}
+.composer-card .image-preview-area .preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.composer-card .image-preview-area .preview-item .remove-btn {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 22px;
+    height: 22px;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+.composer-card .image-preview-area .preview-item .remove-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ===== 上传进度条 ===== */
+#uploadProgressContainer {
+    display: none;
+    margin-top: 10px;
+}
+#uploadProgressContainer .progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--ba-text-muted);
+    margin-bottom: 4px;
+}
+#uploadProgressContainer .progress-track {
+    width: 100%;
+    height: 4px;
+    background: rgba(150,170,190,0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+#uploadProgressContainer .progress-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--ba-accent);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* ===== 发帖工具栏 ===== */
+.composer-card .composer-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.composer-card .composer-toolbar .left-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.composer-card .composer-toolbar .left-actions .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(150,170,190,0.2);
+    background: transparent;
+    color: var(--ba-text-muted);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    font-size: 20px;
+}
+.composer-card .composer-toolbar .left-actions .icon-btn:hover {
+    background: rgba(122,92,45,0.08);
+    color: var(--ba-accent);
+    border-color: var(--ba-accent);
+}
+.composer-card .composer-toolbar .right-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.composer-card .composer-toolbar .char-count {
+    font-size: 13px;
+    color: var(--ba-text-muted);
+}
+.composer-card .composer-toolbar .char-count.warning {
+    color: #f39c12;
+}
+.composer-card .composer-toolbar .char-count.danger {
+    color: #e74c3c;
+}
+.composer-card .composer-toolbar .submit-btn {
+    padding: 8px 24px;
+    border-radius: 30px;
+    border: none;
+    background: var(--ba-accent);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    font-family: inherit;
+}
+.composer-card .composer-toolbar .submit-btn:hover {
+    background: var(--ba-accent-dark);
+    transform: scale(1.02);
+}
+.composer-card .composer-toolbar .submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+    .composer-card .composer-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .composer-card .composer-toolbar .right-actions {
+        justify-content: flex-end;
+    }
+}
+@media (max-width: 480px) {
+    .greeting-banner { padding: 10px 14px; }
+    .greeting-banner .greeting-icon { font-size: 20px; }
+    .composer-card { padding: 12px 14px 16px; }
+    .composer-card textarea { min-height: 60px; font-size: 14px; }
+}
+
+/* ============================================================
+   Logo 样式（左上角 + 页脚）
+   ============================================================ */
+
+/* ===== 左上角 Logo ===== */
+.app-logo {
+    height: 34px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    max-height: 34px;
+}
+
+/* 如果图片加载失败，显示文字备用 */
+.app-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--ba-accent);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* ===== 页脚 Logo ===== */
+.footer-logo-img {
+    height: 36px;
+    width: auto;
+    display: inline-block;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    max-height: 36px;
+}
+.footer-logo-img:hover {
+    opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+    .footer-logo-img {
+        filter: brightness(0.9);
+    }
+}
+
+/* ===== 响应式 Logo 尺寸 ===== */
+@media (max-width: 1024px) {
+    .app-logo {
+        height: 30px;
+        max-height: 30px;
+    }
+    .footer-logo-img {
+        height: 32px;
+        max-height: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-logo {
+        height: 28px;
+        max-height: 28px;
+    }
+    .footer-logo-img {
+        height: 28px;
+        max-height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-logo {
+        height: 24px;
+        max-height: 24px;
+    }
+    .footer-logo-img {
+        height: 24px;
+        max-height: 24px;
+    }
+}

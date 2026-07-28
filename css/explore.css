@@ -1,0 +1,181 @@
+/* ============================================================
+   explore.css - 发现页样式
+   ============================================================ */
+
+/* ===== 热门话题 ===== */
+.tags-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+.tag-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    background: var(--ba-card-bg);
+    border: 1px solid var(--ba-card-border);
+    color: var(--ba-accent);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+.tag-item:hover {
+    background: rgba(122,92,45,0.08);
+    border-color: var(--ba-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(122,92,45,0.08);
+    text-decoration: none;
+}
+.tag-item .tag-icon {
+    font-size: 16px;
+}
+
+/* ===== 推荐用户 ===== */
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.user-card {
+    background: var(--ba-card-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--ba-card-border);
+    border-radius: var(--ba-radius-lg);
+    padding: 20px 16px;
+    text-align: center;
+    transition: box-shadow 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+.user-card:hover {
+    box-shadow: var(--ba-card-shadow-hover);
+    transform: translateY(-4px);
+    border-color: rgba(122,92,45,0.15);
+}
+.user-card .user-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #e0e0e0;
+    border: 3px solid var(--ba-accent-light);
+    margin: 0 auto 10px;
+    display: block;
+    transition: border-color 0.2s;
+}
+.user-card:hover .user-avatar {
+    border-color: var(--ba-accent);
+}
+.user-card .user-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ba-text);
+}
+.user-card .user-handle {
+    font-size: 12px;
+    color: var(--ba-text-muted);
+    margin-bottom: 6px;
+}
+.user-card .user-bio {
+    font-size: 13px;
+    color: var(--ba-text-secondary);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 10px;
+    min-height: 36px;
+}
+.user-card .user-stats {
+    font-size: 12px;
+    color: var(--ba-text-muted);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.user-card .user-stats span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ===== 统计卡片 ===== */
+.stats-card {
+    background: var(--ba-card-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--ba-card-border);
+    border-radius: var(--ba-radius-lg);
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+.stats-card:hover {
+    box-shadow: var(--ba-card-shadow-hover);
+}
+.stats-card .stat-item .stat-num {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ba-accent);
+    font-family: 'Playfair Display', serif;
+}
+.stats-card .stat-item .stat-label {
+    font-size: 13px;
+    color: var(--ba-text-muted);
+    margin-top: 2px;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+    .user-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+    .stats-card {
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 16px;
+    }
+    .stats-card .stat-item .stat-num {
+        font-size: 22px;
+    }
+    .tags-grid {
+        gap: 6px;
+    }
+    .tag-item {
+        font-size: 13px;
+        padding: 6px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+    .user-card {
+        padding: 14px 10px;
+    }
+    .user-card .user-avatar {
+        width: 48px;
+        height: 48px;
+    }
+    .user-card .user-name {
+        font-size: 13px;
+    }
+    .user-card .user-bio {
+        font-size: 12px;
+        min-height: 30px;
+        -webkit-line-clamp: 1;
+    }
+    .user-card .user-stats {
+        font-size: 11px;
+        gap: 12px;
+    }
+}

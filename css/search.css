@@ -1,0 +1,145 @@
+/* ============================================================
+   search.css - 搜索页样式
+   ============================================================ */
+
+/* ===== 搜索标签切换 ===== */
+.search-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(150,170,190,0.15);
+}
+.search-tabs a {
+    padding: 10px 20px;
+    color: var(--ba-text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+.search-tabs a:hover {
+    color: var(--ba-accent);
+    text-decoration: none;
+}
+.search-tabs a.active {
+    color: var(--ba-accent);
+    border-bottom-color: var(--ba-accent);
+}
+
+/* ===== 搜索结果 ===== */
+.search-results {
+    margin-top: 4px;
+}
+.search-section {
+    margin-bottom: 24px;
+}
+.search-section .section-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+    padding-top: 0;
+}
+
+/* ===== 用户卡片（搜索结果中） ===== */
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.user-card {
+    background: var(--ba-card-bg);
+    border: 1px solid var(--ba-card-border);
+    border-radius: var(--ba-radius);
+    padding: 16px 12px;
+    text-align: center;
+    transition: box-shadow 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+.user-card:hover {
+    box-shadow: var(--ba-card-shadow-hover);
+    transform: translateY(-2px);
+}
+.user-card .user-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #e0e0e0;
+    margin: 0 auto 8px;
+    display: block;
+}
+.user-card .user-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ba-text);
+}
+.user-card .user-handle {
+    font-size: 12px;
+    color: var(--ba-text-muted);
+}
+.user-card .user-bio {
+    font-size: 12px;
+    color: var(--ba-text-secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+/* ===== 无结果 ===== */
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--ba-text-muted);
+}
+.no-results .material-symbols-outlined {
+    opacity: 0.3;
+    margin-bottom: 12px;
+}
+.no-results p {
+    margin-top: 8px;
+}
+
+/* ===== 搜索提示 ===== */
+.search-hint {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--ba-text-muted);
+}
+.search-hint .material-symbols-outlined {
+    opacity: 0.3;
+    margin-bottom: 12px;
+}
+.search-hint p {
+    font-size: 16px;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+    .search-tabs a {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+    .user-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+    .user-card {
+        padding: 12px 8px;
+    }
+    .user-card .user-avatar {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .search-tabs a {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}

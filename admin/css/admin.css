@@ -1,0 +1,213 @@
+/* ============================================================
+   admin.css - 后台管理样式
+   ============================================================ */
+
+/* ===== 后台头部 ===== */
+.admin-header {
+    padding: 8px 0 16px;
+}
+.admin-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ba-accent);
+}
+.admin-header .admin-sub {
+    color: var(--ba-text-muted);
+    font-size: 14px;
+}
+
+/* ===== 统计卡片 ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+}
+.stat-card {
+    background: var(--ba-card-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--ba-card-border);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+.stat-card:hover {
+    box-shadow: var(--ba-card-shadow-hover);
+}
+.stat-card .stat-icon {
+    font-size: 28px;
+    line-height: 1.2;
+}
+.stat-card .stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ba-accent);
+    font-family: 'Playfair Display', serif;
+}
+.stat-card .stat-label {
+    font-size: 12px;
+    color: var(--ba-text-muted);
+}
+
+/* ===== 快捷操作 ===== */
+.admin-section {
+    margin-bottom: 24px;
+}
+.admin-section h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ba-text);
+    margin-bottom: 12px;
+}
+.quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.quick-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--ba-card-bg);
+    border: 1px solid var(--ba-card-border);
+    border-radius: 12px;
+    color: var(--ba-text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.quick-btn:hover {
+    background: var(--ba-accent);
+    color: #fff;
+    text-decoration: none;
+    border-color: var(--ba-accent);
+}
+.quick-btn .material-symbols-outlined {
+    font-size: 20px;
+}
+
+/* ===== 管理卡片网格 ===== */
+.admin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+@media (max-width: 768px) {
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.admin-card {
+    background: var(--ba-card-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--ba-card-border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    transition: box-shadow 0.3s;
+}
+.admin-card:hover {
+    box-shadow: var(--ba-card-shadow-hover);
+}
+.admin-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ba-text);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(150,170,190,0.1);
+}
+
+/* ===== 列表项 ===== */
+.admin-list .list-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(150,170,190,0.06);
+}
+.admin-list .list-item:last-child {
+    border-bottom: none;
+}
+.list-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #e0e0e0;
+    flex-shrink: 0;
+}
+.list-name {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--ba-text);
+    flex: 1;
+}
+.list-link {
+    color: var(--ba-accent);
+    text-decoration: none;
+    font-size: 14px;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.list-link:hover {
+    text-decoration: underline;
+}
+.list-author {
+    font-size: 13px;
+    color: var(--ba-text-muted);
+    flex-shrink: 0;
+}
+.list-time {
+    font-size: 12px;
+    color: var(--ba-text-muted);
+    flex-shrink: 0;
+}
+.list-badge {
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+.badge-admin {
+    background: rgba(122,92,45,0.15);
+    color: var(--ba-accent);
+}
+.badge-mod {
+    background: rgba(52,152,219,0.15);
+    color: #2980b9;
+}
+.badge-user {
+    background: rgba(150,170,190,0.15);
+    color: var(--ba-text-muted);
+}
+.list-empty {
+    text-align: center;
+    padding: 20px 0;
+    color: var(--ba-text-muted);
+    font-size: 14px;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .stat-card .stat-number {
+        font-size: 20px;
+    }
+    .quick-actions {
+        flex-direction: column;
+    }
+    .quick-btn {
+        justify-content: center;
+    }
+}
